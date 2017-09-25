@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	配置持久层接口的映射文件
+		namespace：配置映射对应的持久层接口
+ -->
+<mapper namespace="com.soft863.dao.IndexDao">
+
+    <select id="query" resultType="map">
+        select * from t_index
+    </select>
+
+</mapper>

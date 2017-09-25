@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- 解决MyBatis返回map字段空的问题 -->
+    <settings>
+        <setting name="callSettersOnNulls" value="true"></setting>
+    </settings>
+
+    <!-- 配置别名 -->
+    <typeAliases>
+        <!-- 通用配置：entity包下的所有实体类别名为类型首字母变小写 -->
+        <package name="com.soft863.entity"></package>
+    </typeAliases>
+</configuration>

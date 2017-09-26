@@ -19,6 +19,8 @@
     <!-- 开启mvc注解的支持 -->
     <mvc:annotation-driven>
         <mvc:message-converters>
+            <!-- arrayHttpMessageConverter要放在后面两个之前 -->
+            <ref bean="arrayHttpMessageConverter" />
             <ref bean="stringHttpMessageConverter" />
             <ref bean="mappingJackson2HttpMessageConverter" />
         </mvc:message-converters>
@@ -35,6 +37,9 @@
         <property name="defaultEncoding" value="utf-8"></property>
         <property name="maxUploadSize" value="999999999"></property>
     </bean>
+
+    <!-- spring文件下载 -->
+    <bean id="arrayHttpMessageConverter" class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
 
     <!-- 解决中文乱码：该类解决当返回的数据是字符串包含中文时出现乱码问题 -->
     <bean id="stringHttpMessageConverter"
